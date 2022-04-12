@@ -1,0 +1,16 @@
+language: java
+
+dist: trusty
+
+jdk:
+
+- oraclejdk8
+
+sudo: false
+
+script:
+
+- mvn clean
+- mvn package
+- mvn clean clover:setup test clover:aggregate clover:clover
+
